@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 # Downloads and updates the lagasafn
 
 import requests
@@ -26,7 +27,6 @@ for i, law in enumerate(list_of_laws):
     html = requests.get('http://www.althingi.is%s' % href).content
     filename = './%s' % href
     with open(filename,'w') as f:
-        html = html.encode('utf-8')
         f.write(html)
     print "ok"
     
